@@ -18,18 +18,24 @@ If you want to change the size you should change it from MACROS.py with the SIZE
 Backtracking algorithm works recursively. Its first action is initializing the value algorithm searches. It is the open spots on the sudoku.It initializes an array holding the coordinates of the values which are equal to 0 and the algorithm will select the first element from these coordinates to assign a value
 The algorithm ends in 2 conditions ;
 1. There are no open spots in the algorithm
-2. The value cant be reached and all possible values reachable from the coordinates the
-algorithm got stuck has been tried and it couldn’t find a solution in that scenario.
+2. The value cant be reached and all possible values reachable from the coordinates the algorithm got stuck has been tried and it couldn’t find a solution in that scenario.
+
 After that it goes into a for loop which will try all the values the selected coordinate can have , in each iteration of the loop it calls the all_okay() function from the level class. This function has an important role in this algorithm since it checks if the value on the specified coordinates is valid regarding
+
 A. The coordinate hasn’t been given any value and is equal to 0(This is important since there are values pre determined in the sudoku grid)
+
 B. Each number from 1-9 is only used once in its column
+
 C. Each number from 1-9 is only used once in its row
+
 D. Each number from 1-9 is only used once in its 3x3 section
-E. All coordinates add up to a specific value that the Sudoku has given. I called this
-specific values Constraints in the code I wrote.
+
+E. All coordinates add up to a specific value that the Sudoku has given. I called this specific values Constraints in the code I wrote.
+
 If all the values return True then the algorithm initialize the value to the coordinates and calls itself recursively. It passes down the modified matrix as an argument since it will try to go and determine the next open value.
+
 If it fails and returns False as the value it backtracks once and try’s all the values left in the for loop it was iterating. If it fails to find it, it goes back one more and more and more... Backtracking might be on the last point and it might delete all the values it found and come back to the first coordinate since its only logic is determining if the point in the specified coordinates is valid or not.
 
 
 # Conclusion 
-When the app concludes it will present the result matrix as well as how long it took to produce this result. Since the app is using the backtracking algorithm it may take a while to conclude.
+When the app concludes it will present the result matrix as well as how long it took to produce this result. Since the app is using the backtracking algorithm it may take a while to conclude. Most lines of codes have comments giving information about the smallest details so it will be very easy to understand what I tried to do.
